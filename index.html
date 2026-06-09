@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZenPro — Comunicação inteligente pelo WhatsApp</title>
+  <meta name="description" content="ZenPro é a plataforma de atendimento e comunicação pelo WhatsApp para pequenos negócios, clínicas e redes de parceiros.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; color: #1a1a2e; background: #fff; }
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 5%; background: #fff;
+      border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 100;
+    }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #6C3FC5; letter-spacing: -0.5px; }
+    .logo span { color: #1a1a2e; }
+    nav a { color: #555; text-decoration: none; font-size: 0.95rem; margin-left: 24px; }
+    nav a:hover { color: #6C3FC5; }
+    .btn-nav {
+      background: #6C3FC5; color: #fff !important; padding: 10px 20px;
+      border-radius: 8px; font-weight: 600; margin-left: 24px;
+    }
+    .btn-nav:hover { background: #5a32a3; }
+
+    /* HERO */
+    .hero {
+      padding: 80px 5% 60px;
+      background: linear-gradient(135deg, #f8f4ff 0%, #fff 60%);
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block; background: #ede8ff; color: #6C3FC5;
+      padding: 6px 16px; border-radius: 20px; font-size: 0.85rem;
+      font-weight: 600; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
+      line-height: 1.2; max-width: 700px; margin: 0 auto 20px;
+    }
+    .hero h1 span { color: #6C3FC5; }
+    .hero p {
+      font-size: 1.15rem; color: #555; max-width: 560px;
+      margin: 0 auto 36px; line-height: 1.7;
+    }
+    .btn-hero {
+      display: inline-block; background: #25D366; color: #fff;
+      padding: 16px 36px; border-radius: 10px; font-size: 1.05rem;
+      font-weight: 700; text-decoration: none; transition: background 0.2s;
+    }
+    .btn-hero:hover { background: #1ebe5a; }
+
+    /* CLIENTES */
+    .clientes {
+      padding: 48px 5%; text-align: center; background: #fafafa;
+      border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0;
+    }
+    .clientes p { font-size: 0.9rem; color: #888; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .clientes-logos { display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .clientes-logos span { font-weight: 700; font-size: 1.1rem; color: #aaa; }
+
+    /* FEATURES */
+    .features { padding: 80px 5%; }
+    .features h2 { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+    .features .sub { text-align: center; color: #666; margin-bottom: 48px; font-size: 1.05rem; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; max-width: 1100px; margin: 0 auto; }
+    .feature-card {
+      padding: 32px; border-radius: 16px; background: #f8f4ff;
+      border: 1px solid #ede8ff;
+    }
+    .feature-icon { font-size: 2rem; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .feature-card p { color: #666; line-height: 1.6; font-size: 0.95rem; }
+
+    /* COMO FUNCIONA */
+    .como { padding: 80px 5%; background: #f8f4ff; text-align: center; }
+    .como h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+    .como .sub { color: #666; margin-bottom: 48px; font-size: 1.05rem; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; max-width: 900px; margin: 0 auto; }
+    .step { padding: 28px; background: #fff; border-radius: 16px; }
+    .step-num { font-size: 2rem; font-weight: 900; color: #6C3FC5; margin-bottom: 12px; }
+    .step h3 { font-weight: 700; margin-bottom: 8px; }
+    .step p { color: #666; font-size: 0.9rem; line-height: 1.6; }
+
+    /* CTA */
+    .cta {
+      padding: 80px 5%; text-align: center;
+      background: linear-gradient(135deg, #6C3FC5, #4a2b8a);
+      color: #fff;
+    }
+    .cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; }
+    .cta p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 36px; }
+    .btn-cta {
+      display: inline-block; background: #25D366; color: #fff;
+      padding: 16px 40px; border-radius: 10px; font-size: 1.05rem;
+      font-weight: 700; text-decoration: none;
+    }
+    .btn-cta:hover { background: #1ebe5a; }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 5%; background: #1a1a2e; color: #888;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    footer a { color: #888; text-decoration: none; font-size: 0.9rem; }
+    footer a:hover { color: #fff; }
+
+    /* POLITICAS */
+    .politicas-section { padding: 80px 5%; max-width: 860px; margin: 0 auto; }
+    .politicas-section h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+    .politicas-section .data { color: #888; margin-bottom: 40px; font-size: 0.9rem; }
+    .politicas-section h2 { font-size: 1.2rem; font-weight: 700; margin: 32px 0 12px; color: #6C3FC5; }
+    .politicas-section p, .politicas-section li { color: #444; line-height: 1.8; font-size: 0.97rem; }
+    .politicas-section ul { padding-left: 20px; margin: 8px 0; }
+    .politicas-section li { margin-bottom: 6px; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 60px 5% 40px; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Zen<span>Pro</span></div>
+    <div>
+      <a href="#recursos">Recursos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="/politicas">Política de Privacidade</a>
+      <a href="https://wa.me/5511987943131?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20ZenPro." class="btn-nav">Falar pelo WhatsApp</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">⚡ Atendimento via WhatsApp</div>
+    <h1>Seu negócio <span>sempre presente</span> no WhatsApp</h1>
+    <p>ZenPro organiza seus atendimentos, automatiza respostas e garante que nenhum lead fique sem resposta — tudo pelo WhatsApp.</p>
+    <a href="https://wa.me/5511987943131?text=Ol%C3%A1!%20Quero%20conhecer%20o%20ZenPro." class="btn-hero">💬 Quero conhecer o ZenPro</a>
+  </section>
+
+  <!-- CLIENTES -->
+  <section class="clientes">
+    <p>Usado por</p>
+    <div class="clientes-logos">
+      <span>Holos Cursos e Terapias</span>
+      <span>UniMasso</span>
+      <span>Rede Baixada</span>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="recursos">
+    <h2>Tudo que seu negócio precisa</h2>
+    <p class="sub">Uma plataforma completa para quem vende e atende pelo WhatsApp.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📥</div>
+        <h3>Atendimento organizado</h3>
+        <p>Centralize todas as conversas do WhatsApp em um único painel. Atribua atendentes, defina prioridades e nunca perca um lead.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>Automação inteligente</h3>
+        <p>Resposta automática fora do horário, distribuição de leads por equipe e follow-up automático sem esforço manual.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Métricas em tempo real</h3>
+        <p>Saiba quantos leads entraram, qual atendente fechou mais e qual campanha gerou mais conversas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📣</div>
+        <h3>Disparos em massa</h3>
+        <p>Envie campanhas segmentadas para sua base de contatos com controle total de entrega e respostas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔀</div>
+        <h3>Múltiplos atendentes</h3>
+        <p>Distribua conversas automaticamente entre sua equipe. Cada atendente vê apenas o que é seu.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <h3>Integração com campanhas</h3>
+        <p>Rastreie de qual campanha veio cada lead — Google Ads, Meta Ads ou orgânico — direto no painel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="como" id="como-funciona">
+    <h2>Como funciona</h2>
+    <p class="sub">Em menos de 24 horas seu negócio está no ar.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Conecte seu WhatsApp</h3>
+        <p>Conecte seu número em minutos. Sem burocracia, sem trocar de chip.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Configure sua equipe</h3>
+        <p>Adicione atendentes, defina horários e regras de distribuição de leads.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Receba e converta</h3>
+        <p>Leads entram organizados, sua equipe atende com agilidade e você acompanha tudo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Pronto para organizar seu WhatsApp?</h2>
+    <p>Fale com a gente e veja o ZenPro em ação.</p>
+    <a href="https://wa.me/5511987943131?text=Ol%C3%A1!%20Quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20ZenPro." class="btn-cta">💬 Agendar demonstração</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo" style="color:#fff;">Zen<span style="color:#aaa;">Pro</span></div>
+    <div>
+      <a href="/politicas">Política de Privacidade</a> &nbsp;·&nbsp;
+      <a href="/politicas#termos">Termos de Uso</a>
+    </div>
+    <div style="font-size:0.85rem;">© 2026 ZenPro · Lucio Maier Consultoria em TI</div>
+  </footer>
+
+  <!-- POLITICAS (âncora /politicas via hash ou página separada) -->
+
+</body>
+</html>
