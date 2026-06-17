@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" rx="200" fill="#6C3FC5"/>
+  <rect x="40" y="40" width="944" height="944" rx="170" fill="#7B4FD4"/>
+
+  <!-- Letra Z -->
+  <text x="180" y="660" font-family="Arial Black, sans-serif" font-weight="900" font-size="520" fill="white" letter-spacing="-20">Z</text>
+
+  <!-- Ponto decorativo -->
+  <circle cx="780" cy="720" r="60" fill="#25D366"/>
+</svg>
