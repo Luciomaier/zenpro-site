@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/politicas", "destination": "/politicas.html" }
+    { "source": "/politicas", "destination": "/politicas.html" },
+    { "source": "/tutoriais", "destination": "/tutoriais.html" }
   ]
 }
